@@ -51,5 +51,64 @@ namespace WinFormsApp2
         {
 
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            //=====Imperativo:
+            string Huesped = txtHuesped.Text;
+            int noches = (int)nudnoches.Value;
+            decimal tarifa = Convert.ToDecimal(nudTarifa.Text);
+
+            decimal subtotal = noches * tarifa;
+            decimal descuento = 0m;
+            if (noches >= 7)
+            {
+
+                descuento = subtotal * 0.10m;
+
+            }
+            decimal baseImponible = subtotal - descuento;
+            decimal itbis = baseImponible * 0.18m;
+            decimal servicio = baseImponible * 0.10m;
+            decimal total = baseImponible + itbis + servicio;
+
+            LSTresultados.Items.Add($"[Imperativo] {Huesped} : US$ {total: N2}");
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void numericUpDown2_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            LSTresultados.Items.Clear();
+        }
     }
 }
