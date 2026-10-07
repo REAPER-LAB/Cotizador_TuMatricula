@@ -53,14 +53,11 @@
             label4 = new Label();
             button3 = new Button();
             lstResultados = new ListBox();
-            btnPesos = new Button();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            nudTasa = new NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)nudNoches).BeginInit();
             ((System.ComponentModel.ISupportInitialize)txtTarifa).BeginInit();
             gbCotizador.SuspendLayout();
             gbTotales.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)nudTasa).BeginInit();
             SuspendLayout();
             // 
             // lblHuesped
@@ -84,7 +81,6 @@
             // nudNoches
             // 
             nudNoches.Location = new Point(181, 108);
-            nudNoches.Maximum = new decimal(new int[] { 60, 0, 0, 0 });
             nudNoches.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             nudNoches.Name = "nudNoches";
             nudNoches.Size = new Size(120, 23);
@@ -314,33 +310,13 @@
             lstResultados.TabIndex = 16;
             lstResultados.SelectedIndexChanged += listBox1_SelectedIndexChanged;
             // 
-            // btnPesos
-            // 
-            btnPesos.Location = new Point(833, 74);
-            btnPesos.Name = "btnPesos";
-            btnPesos.Size = new Size(75, 23);
-            btnPesos.TabIndex = 11;
-            btnPesos.Text = "Total en RD$";
-            btnPesos.UseVisualStyleBackColor = true;
-            // 
-            // nudTasa
-            // 
-            nudTasa.DecimalPlaces = 2;
-            nudTasa.Location = new Point(926, 72);
-            nudTasa.Maximum = new decimal(new int[] { 1000, 0, 0, 0 });
-            nudTasa.Name = "nudTasa";
-            nudTasa.Size = new Size(120, 23);
-            nudTasa.TabIndex = 17;
-            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1228, 561);
             Controls.Add(btnImperativo);
-            Controls.Add(nudTasa);
             Controls.Add(btnCalcular);
-            Controls.Add(btnPesos);
             Controls.Add(btnLimpiar);
             Controls.Add(lstResultados);
             Controls.Add(button3);
@@ -362,7 +338,6 @@
             gbCotizador.PerformLayout();
             gbTotales.ResumeLayout(false);
             gbTotales.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)nudTasa).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -393,8 +368,6 @@
         private Button button3;
         private ListBox lstResultados;
         private Button btnImperativo;
-        private Button btnPesos;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
-        private NumericUpDown nudTasa;
     }
 }

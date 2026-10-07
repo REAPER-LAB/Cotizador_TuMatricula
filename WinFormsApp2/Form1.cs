@@ -111,7 +111,7 @@ namespace WinFormsApp2
             lstResultados.Items.Clear();
             txtHuesped.Clear();
             nudNoches.Value = 1;
-            txtTarifa.Clear();
+            txtTarifa.Value = 1;
         }
     }
 }
