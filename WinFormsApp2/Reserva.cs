@@ -7,18 +7,17 @@ using System.Web;
 
 namespace WinFormsApp2
 {
-    internal class Reserva
+    public class Reserva
     {
-        public decimal TarifaPorNoche = 180m;
-        public int Noches = 10;
-        public string Huesped;
-        public int tasa = 63;
-        public decimal pesos = 1;
-        public decimal Total
-        {
-            get { return Noches * TarifaPorNoche; }
-        }
+        public string Huesped { get; set; } = "";
+        public int Noches { get; set; }
+        public decimal TarifaPorNoche { get; set; }
 
-
+        public decimal Subtotal => Noches * TarifaPorNoche;
+        public decimal Descuento => Noches >= 7 ? Subtotal * 0.10m : 0m;
+        public decimal BaseImponible => Subtotal - Descuento;
+        public decimal Itbis => BaseImponible * 0.18m;
+        public decimal Servicio => BaseImponible * 0.10m;
+        public decimal Total => BaseImponible + Itbis + Servicio;
     }
 }

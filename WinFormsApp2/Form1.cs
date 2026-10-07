@@ -147,7 +147,14 @@ namespace WinFormsApp2
 
         private void btnPorPersona_Click(object sender, EventArgs e)
         {
+            var reserva = new Reserva
+            {
+                Huesped = txtHuesped.Text,
+                Noches = (int)nudNoches.Value,
+                TarifaPorNoche = Convert.ToDecimal(txtTarifa.Text)              };
 
+            decimal porPersona = reserva.Total / nudPersonas.Value;
+            lstResultados.Items.Add($"Cada persona paga: US$ {porPersona:N2}");
         }
     }
 }
