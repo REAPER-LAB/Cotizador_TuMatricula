@@ -60,6 +60,9 @@
             nudPersonas = new NumericUpDown();
             btnPorPersona = new Button();
             btnDeposito = new Button();
+            chkFinSemana = new CheckBox();
+            btnFinSemana = new Button();
+            btnDesglose = new Button();
             ((System.ComponentModel.ISupportInitialize)nudNoches).BeginInit();
             gbCotizador.SuspendLayout();
             gbTotales.SuspendLayout();
@@ -370,7 +373,7 @@
             // 
             // btnDeposito
             // 
-            btnDeposito.Location = new Point(838, 195);
+            btnDeposito.Location = new Point(832, 195);
             btnDeposito.Name = "btnDeposito";
             btnDeposito.Size = new Size(75, 23);
             btnDeposito.TabIndex = 22;
@@ -378,11 +381,44 @@
             btnDeposito.UseVisualStyleBackColor = true;
             btnDeposito.Click += btnDeposito_Click;
             // 
+            // chkFinSemana
+            // 
+            chkFinSemana.AutoSize = true;
+            chkFinSemana.Location = new Point(960, 199);
+            chkFinSemana.Name = "chkFinSemana";
+            chkFinSemana.Size = new Size(103, 19);
+            chkFinSemana.TabIndex = 23;
+            chkFinSemana.Text = "chkFinSemana";
+            chkFinSemana.UseVisualStyleBackColor = true;
+            // 
+            // btnFinSemana
+            // 
+            btnFinSemana.Location = new Point(832, 250);
+            btnFinSemana.Name = "btnFinSemana";
+            btnFinSemana.Size = new Size(75, 23);
+            btnFinSemana.TabIndex = 24;
+            btnFinSemana.Text = "FinSemana";
+            btnFinSemana.UseVisualStyleBackColor = true;
+            btnFinSemana.Click += btnFinSemana_Click_1;
+            // 
+            // btnDesglose
+            // 
+            btnDesglose.Location = new Point(960, 250);
+            btnDesglose.Name = "btnDesglose";
+            btnDesglose.Size = new Size(75, 23);
+            btnDesglose.TabIndex = 25;
+            btnDesglose.Text = "btnDesglose ";
+            btnDesglose.UseVisualStyleBackColor = true;
+            btnDesglose.Click += btnDesglose_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1228, 561);
+            Controls.Add(btnDesglose);
+            Controls.Add(btnFinSemana);
+            Controls.Add(chkFinSemana);
             Controls.Add(btnDeposito);
             Controls.Add(btnPorPersona);
             Controls.Add(nudPersonas);
@@ -449,5 +485,8 @@
         private NumericUpDown nudPersonas;
         private Button btnPorPersona;
         private Button btnDeposito;
+        private CheckBox chkFinSemana;
+        private Button btnFinSemana;
+        private Button btnDesglose;
     }
 }

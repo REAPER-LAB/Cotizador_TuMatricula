@@ -164,7 +164,7 @@ namespace WinFormsApp2
             {
                 Huesped = txtHuesped.Text,
                 Noches = (int)nudNoches.Value,
-                TarifaPorNoche = Convert.ToDecimal(txtTarifa.Text)   
+                TarifaPorNoche = Convert.ToDecimal(txtTarifa.Text)
             };
 
             decimal deposito = reserva.Total * 0.30m;
@@ -173,5 +173,62 @@ namespace WinFormsApp2
             lstResultados.Items.Add($"Depósito: US$ {deposito:N2}");
             lstResultados.Items.Add($"Saldo pendiente: US$ {saldo:N2}");
         }
+
+        private void btnFinSemana_Click(object sender, EventArgs e)
+        {
+            decimal tarifa = Convert.ToDecimal(txtTarifa.Text);
+            if (chkFinSemana.Checked)
+            {
+                tarifa = tarifa * 1.15m;
+            }
+
+            var reserva = new Reserva
+            {
+                Huesped = txtHuesped.Text,
+                Noches = (int)nudNoches.Value,
+                TarifaPorNoche = tarifa
+            };
+
+            lstResultados.Items.Add($"Total fin de semana: US$ {reserva.Total:N2}");
+        }
+
+        private void btnFinSemana_Click_1(object sender, EventArgs e)
+        {
+            decimal tarifa = Convert.ToDecimal(txtTarifa.Text);
+
+            if (chkFinSemana.Checked)
+            {
+                tarifa = tarifa * 1.15m;
+            }
+
+            var reserva = new Reserva
+            {
+                Huesped = txtHuesped.Text,
+                Noches = (int)nudNoches.Value,
+                TarifaPorNoche = tarifa
+            };
+
+            lstResultados.Items.Add($"Total fin de semana: US$ {reserva.Total:N2}");
+        }
+
+        private void btnDesglose_Click(object sender, EventArgs e)
+        {
+            var reserva = new Reserva
+            {
+                Huesped = txtHuesped.Text,
+                Noches = (int)nudNoches.Value,
+                TarifaPorNoche = Convert.ToDecimal(txtTarifa.Text) 
+            };
+
+            lstResultados.Items.Add($"Subtotal: {reserva.Subtotal:N2}");
+            lstResultados.Items.Add($"Descuento: {reserva.Descuento:N2}");
+            lstResultados.Items.Add($"Base imponible: {reserva.BaseImponible:N2}");
+            lstResultados.Items.Add($"ITBIS: {reserva.Itbis:N2}");
+            lstResultados.Items.Add($"Servicio: {reserva.Servicio:N2}");
+            lstResultados.Items.Add($"Total: {reserva.Total:N2}");
+        }
+        
+
+        
     }
 }
