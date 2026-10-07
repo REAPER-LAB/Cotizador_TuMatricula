@@ -111,7 +111,43 @@ namespace WinFormsApp2
             lstResultados.Items.Clear();
             txtHuesped.Clear();
             nudNoches.Value = 1;
-            txtTarifa.Value = 1;
+            txtTarifa.Clear();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnPesos_Click(object sender, EventArgs e)
+        {
+            var reserva = new Reserva
+            {
+                Huesped = txtHuesped.Text,
+                Noches = (int)nudNoches.Value,
+
+                TarifaPorNoche = Convert.ToDecimal(txtTarifa.Text)
+            };
+
+
+            decimal tasa = nudTasa.Value;
+            decimal pesos = reserva.Total * tasa;
+            lstResultados.Items.Add($"Total en pesos: RD$ {pesos:N2}");
+        }
+
+        private void txtTarifa_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void nudTasa_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnPorPersona_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

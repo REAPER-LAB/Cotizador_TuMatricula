@@ -33,11 +33,11 @@
             nudNoches = new NumericUpDown();
             lblNoches = new Label();
             lblTarifa = new Label();
-            txtTarifa = new NumericUpDown();
             ckTemporada = new CheckBox();
             btnCalcular = new Button();
             btnLimpiar = new Button();
             gbCotizador = new GroupBox();
+            txtTarifa = new TextBox();
             btnImperativo = new Button();
             gbTotales = new GroupBox();
             lblTotal = new Label();
@@ -54,10 +54,16 @@
             button3 = new Button();
             lstResultados = new ListBox();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            nudTasa = new NumericUpDown();
+            label1 = new Label();
+            btnPesos = new Button();
+            nudPersonas = new NumericUpDown();
+            btnPorPersona = new Button();
             ((System.ComponentModel.ISupportInitialize)nudNoches).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)txtTarifa).BeginInit();
             gbCotizador.SuspendLayout();
             gbTotales.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)nudTasa).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)nudPersonas).BeginInit();
             SuspendLayout();
             // 
             // lblHuesped
@@ -108,14 +114,6 @@
             lblTarifa.Text = "Tarifa por noche  (USD)";
             lblTarifa.Click += label3_Click;
             // 
-            // txtTarifa
-            // 
-            txtTarifa.Location = new Point(181, 150);
-            txtTarifa.Name = "txtTarifa";
-            txtTarifa.Size = new Size(120, 23);
-            txtTarifa.TabIndex = 8;
-            txtTarifa.ValueChanged += numericUpDown2_ValueChanged;
-            // 
             // ckTemporada
             // 
             ckTemporada.AutoSize = true;
@@ -149,6 +147,7 @@
             // 
             // gbCotizador
             // 
+            gbCotizador.Controls.Add(txtTarifa);
             gbCotizador.Controls.Add(lblTarifa);
             gbCotizador.Controls.Add(ckTemporada);
             gbCotizador.Location = new Point(12, 35);
@@ -158,6 +157,14 @@
             gbCotizador.TabStop = false;
             gbCotizador.Text = "Cotizador";
             gbCotizador.Enter += groupBox1_Enter;
+            // 
+            // txtTarifa
+            // 
+            txtTarifa.Location = new Point(169, 115);
+            txtTarifa.Name = "txtTarifa";
+            txtTarifa.Size = new Size(100, 23);
+            txtTarifa.TabIndex = 10;
+            txtTarifa.TextChanged += txtTarifa_TextChanged;
             // 
             // btnImperativo
             // 
@@ -310,18 +317,72 @@
             lstResultados.TabIndex = 16;
             lstResultados.SelectedIndexChanged += listBox1_SelectedIndexChanged;
             // 
+            // nudTasa
+            // 
+            nudTasa.DecimalPlaces = 2;
+            nudTasa.Location = new Point(960, 74);
+            nudTasa.Maximum = new decimal(new int[] { 1000, 0, 0, 0 });
+            nudTasa.Name = "nudTasa";
+            nudTasa.Size = new Size(120, 23);
+            nudTasa.TabIndex = 17;
+            nudTasa.ValueChanged += nudTasa_ValueChanged;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(905, 45);
+            label1.Name = "label1";
+            label1.Size = new Size(79, 15);
+            label1.TabIndex = 18;
+            label1.Text = "Tasa del dólar";
+            label1.Click += label1_Click;
+            // 
+            // btnPesos
+            // 
+            btnPesos.Location = new Point(832, 74);
+            btnPesos.Name = "btnPesos";
+            btnPesos.Size = new Size(112, 23);
+            btnPesos.TabIndex = 19;
+            btnPesos.Text = "Total en RD$";
+            btnPesos.UseVisualStyleBackColor = true;
+            btnPesos.Click += btnPesos_Click;
+            // 
+            // nudPersonas
+            // 
+            nudPersonas.Location = new Point(960, 133);
+            nudPersonas.Maximum = new decimal(new int[] { 20, 0, 0, 0 });
+            nudPersonas.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
+            nudPersonas.Name = "nudPersonas";
+            nudPersonas.Size = new Size(120, 23);
+            nudPersonas.TabIndex = 20;
+            nudPersonas.Value = new decimal(new int[] { 1, 0, 0, 0 });
+            // 
+            // btnPorPersona
+            // 
+            btnPorPersona.Location = new Point(832, 133);
+            btnPorPersona.Name = "btnPorPersona";
+            btnPorPersona.Size = new Size(112, 23);
+            btnPorPersona.TabIndex = 21;
+            btnPorPersona.Text = "PorPersona";
+            btnPorPersona.UseVisualStyleBackColor = true;
+            btnPorPersona.Click += btnPorPersona_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1228, 561);
+            Controls.Add(btnPorPersona);
+            Controls.Add(nudPersonas);
+            Controls.Add(btnPesos);
+            Controls.Add(label1);
+            Controls.Add(nudTasa);
             Controls.Add(btnImperativo);
             Controls.Add(btnCalcular);
             Controls.Add(btnLimpiar);
             Controls.Add(lstResultados);
             Controls.Add(button3);
             Controls.Add(gbTotales);
-            Controls.Add(txtTarifa);
             Controls.Add(lblNoches);
             Controls.Add(nudNoches);
             Controls.Add(txtHuesped);
@@ -333,11 +394,12 @@
             Text = "Cotizador Villa Coral Rhyan Duquesne 2024-3489";
             Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)nudNoches).EndInit();
-            ((System.ComponentModel.ISupportInitialize)txtTarifa).EndInit();
             gbCotizador.ResumeLayout(false);
             gbCotizador.PerformLayout();
             gbTotales.ResumeLayout(false);
             gbTotales.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)nudTasa).EndInit();
+            ((System.ComponentModel.ISupportInitialize)nudPersonas).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -348,7 +410,6 @@
         private NumericUpDown nudNoches;
         private Label lblNoches;
         private Label lblTarifa;
-        private NumericUpDown txtTarifa;
         private CheckBox ckTemporada;
         private Button btnCalcular;
         private Button btnLimpiar;
@@ -369,5 +430,11 @@
         private ListBox lstResultados;
         private Button btnImperativo;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private NumericUpDown nudTasa;
+        private Label label1;
+        private Button btnPesos;
+        private TextBox txtTarifa;
+        private NumericUpDown nudPersonas;
+        private Button btnPorPersona;
     }
 }
