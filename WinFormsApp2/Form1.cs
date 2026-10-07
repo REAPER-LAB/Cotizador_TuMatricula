@@ -151,10 +151,27 @@ namespace WinFormsApp2
             {
                 Huesped = txtHuesped.Text,
                 Noches = (int)nudNoches.Value,
-                TarifaPorNoche = Convert.ToDecimal(txtTarifa.Text)              };
+                TarifaPorNoche = Convert.ToDecimal(txtTarifa.Text)
+            };
 
             decimal porPersona = reserva.Total / nudPersonas.Value;
             lstResultados.Items.Add($"Cada persona paga: US$ {porPersona:N2}");
+        }
+
+        private void btnDeposito_Click(object sender, EventArgs e)
+        {
+            var reserva = new Reserva
+            {
+                Huesped = txtHuesped.Text,
+                Noches = (int)nudNoches.Value,
+                TarifaPorNoche = Convert.ToDecimal(txtTarifa.Text)   
+            };
+
+            decimal deposito = reserva.Total * 0.30m;
+            decimal saldo = reserva.Total - deposito;
+
+            lstResultados.Items.Add($"Depósito: US$ {deposito:N2}");
+            lstResultados.Items.Add($"Saldo pendiente: US$ {saldo:N2}");
         }
     }
 }

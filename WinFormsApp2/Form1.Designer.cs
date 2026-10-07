@@ -59,6 +59,7 @@
             btnPesos = new Button();
             nudPersonas = new NumericUpDown();
             btnPorPersona = new Button();
+            btnDeposito = new Button();
             ((System.ComponentModel.ISupportInitialize)nudNoches).BeginInit();
             gbCotizador.SuspendLayout();
             gbTotales.SuspendLayout();
@@ -367,11 +368,22 @@
             btnPorPersona.UseVisualStyleBackColor = true;
             btnPorPersona.Click += btnPorPersona_Click;
             // 
+            // btnDeposito
+            // 
+            btnDeposito.Location = new Point(838, 195);
+            btnDeposito.Name = "btnDeposito";
+            btnDeposito.Size = new Size(75, 23);
+            btnDeposito.TabIndex = 22;
+            btnDeposito.Text = "Deposito";
+            btnDeposito.UseVisualStyleBackColor = true;
+            btnDeposito.Click += btnDeposito_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1228, 561);
+            Controls.Add(btnDeposito);
             Controls.Add(btnPorPersona);
             Controls.Add(nudPersonas);
             Controls.Add(btnPesos);
@@ -436,5 +448,6 @@
         private TextBox txtTarifa;
         private NumericUpDown nudPersonas;
         private Button btnPorPersona;
+        private Button btnDeposito;
     }
 }
