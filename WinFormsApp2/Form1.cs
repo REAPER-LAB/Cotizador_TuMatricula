@@ -76,8 +76,8 @@ namespace WinFormsApp2
         {
             //=====Imperativo:
             string Huesped = txtHuesped.Text;
-            int noches = (int)nudnoches.Value;
-            decimal tarifa = Convert.ToDecimal(nudTarifa.Text);
+            int noches = (int)nudNoches.Value;
+            decimal tarifa = Convert.ToDecimal(txtTarifa.Text);
 
             decimal subtotal = noches * tarifa;
             decimal descuento = 0m;
@@ -92,7 +92,7 @@ namespace WinFormsApp2
             decimal servicio = baseImponible * 0.10m;
             decimal total = baseImponible + itbis + servicio;
 
-            LSTresultados.Items.Add($"[Imperativo] {Huesped} : US$ {total: N2}");
+            lstResultados.Items.Add($"[Imperativo] {Huesped} : US$ {total: N2}");
 
         }
 
@@ -108,7 +108,10 @@ namespace WinFormsApp2
 
         private void button2_Click(object sender, EventArgs e)
         {
-            LSTresultados.Items.Clear();
+            lstResultados.Items.Clear();
+            txtHuesped.Clear();
+            nudNoches.Value = 1;
+            txtTarifa.Clear();
         }
     }
 }
