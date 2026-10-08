@@ -260,5 +260,24 @@ namespace WinFormsApp2
             };
             lstResultados.Items.Add($"Minibar: US$ {minibar.Total:N2}");
         }
+
+        private void btnCuentaTotal_Click(object sender, EventArgs e)
+        {
+
+            var reserva = new Reserva
+            {
+                Huesped = txtHuesped.Text,
+                Noches = (int)nudNoches.Value,
+                TarifaPorNoche = Convert.ToDecimal(txtTarifa.Text)   
+            };
+
+            var traslado = new TrasladoAeropuerto { Pasajeros = 2, Nocturno = true };
+            var excursion = new Excursion { Personas = 4, PrecioPorPersona = 90m };
+            var minibar = new ConsumoMinibar { Cantidad = 11, PrecioUnitario = 3.50m };
+
+            decimal cuenta = reserva.Total + traslado.Total + excursion.Total + minibar.Total;
+            lstResultados.Items.Add($"Cuenta total: US$ {cuenta:N2}");
+
+        }
     }
 }

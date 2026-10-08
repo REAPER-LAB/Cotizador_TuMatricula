@@ -66,6 +66,7 @@
             btnTraslado = new Button();
             btnExcursion = new Button();
             btnMinibar = new Button();
+            btnCuentaTotal = new Button();
             ((System.ComponentModel.ISupportInitialize)nudNoches).BeginInit();
             gbCotizador.SuspendLayout();
             gbTotales.SuspendLayout();
@@ -444,11 +445,22 @@
             btnMinibar.UseVisualStyleBackColor = true;
             btnMinibar.Click += btnMinibar_Click;
             // 
+            // btnCuentaTotal
+            // 
+            btnCuentaTotal.Location = new Point(960, 365);
+            btnCuentaTotal.Name = "btnCuentaTotal";
+            btnCuentaTotal.Size = new Size(75, 23);
+            btnCuentaTotal.TabIndex = 29;
+            btnCuentaTotal.Text = "CuentaTotal";
+            btnCuentaTotal.UseVisualStyleBackColor = true;
+            btnCuentaTotal.Click += btnCuentaTotal_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1228, 561);
+            Controls.Add(btnCuentaTotal);
             Controls.Add(btnMinibar);
             Controls.Add(btnExcursion);
             Controls.Add(btnTraslado);
@@ -527,5 +539,6 @@
         private Button btnTraslado;
         private Button btnExcursion;
         private Button btnMinibar;
+        private Button btnCuentaTotal;
     }
 }
