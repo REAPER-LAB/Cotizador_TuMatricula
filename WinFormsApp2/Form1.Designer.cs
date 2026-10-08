@@ -63,6 +63,9 @@
             chkFinSemana = new CheckBox();
             btnFinSemana = new Button();
             btnDesglose = new Button();
+            btnTraslado = new Button();
+            btnExcursion = new Button();
+            btnMinibar = new Button();
             ((System.ComponentModel.ISupportInitialize)nudNoches).BeginInit();
             gbCotizador.SuspendLayout();
             gbTotales.SuspendLayout();
@@ -411,11 +414,44 @@
             btnDesglose.UseVisualStyleBackColor = true;
             btnDesglose.Click += btnDesglose_Click;
             // 
+            // btnTraslado
+            // 
+            btnTraslado.Location = new Point(832, 304);
+            btnTraslado.Name = "btnTraslado";
+            btnTraslado.Size = new Size(75, 23);
+            btnTraslado.TabIndex = 26;
+            btnTraslado.Text = "Traslado";
+            btnTraslado.UseVisualStyleBackColor = true;
+            btnTraslado.Click += btnTraslado_Click_1;
+            // 
+            // btnExcursion
+            // 
+            btnExcursion.Location = new Point(960, 304);
+            btnExcursion.Name = "btnExcursion";
+            btnExcursion.Size = new Size(75, 23);
+            btnExcursion.TabIndex = 27;
+            btnExcursion.Text = "Excursion";
+            btnExcursion.UseVisualStyleBackColor = true;
+            btnExcursion.Click += btnExcursion_Click;
+            // 
+            // btnMinibar
+            // 
+            btnMinibar.Location = new Point(832, 365);
+            btnMinibar.Name = "btnMinibar";
+            btnMinibar.Size = new Size(75, 23);
+            btnMinibar.TabIndex = 28;
+            btnMinibar.Text = "Minibar";
+            btnMinibar.UseVisualStyleBackColor = true;
+            btnMinibar.Click += btnMinibar_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1228, 561);
+            Controls.Add(btnMinibar);
+            Controls.Add(btnExcursion);
+            Controls.Add(btnTraslado);
             Controls.Add(btnDesglose);
             Controls.Add(btnFinSemana);
             Controls.Add(chkFinSemana);
@@ -488,5 +524,8 @@
         private CheckBox chkFinSemana;
         private Button btnFinSemana;
         private Button btnDesglose;
+        private Button btnTraslado;
+        private Button btnExcursion;
+        private Button btnMinibar;
     }
 }

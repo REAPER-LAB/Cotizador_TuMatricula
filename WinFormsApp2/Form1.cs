@@ -217,7 +217,7 @@ namespace WinFormsApp2
             {
                 Huesped = txtHuesped.Text,
                 Noches = (int)nudNoches.Value,
-                TarifaPorNoche = Convert.ToDecimal(txtTarifa.Text) 
+                TarifaPorNoche = Convert.ToDecimal(txtTarifa.Text)
             };
 
             lstResultados.Items.Add($"Subtotal: {reserva.Subtotal:N2}");
@@ -227,8 +227,38 @@ namespace WinFormsApp2
             lstResultados.Items.Add($"Servicio: {reserva.Servicio:N2}");
             lstResultados.Items.Add($"Total: {reserva.Total:N2}");
         }
-        
 
-        
+
+
+
+        private void btnTraslado_Click_1(object sender, EventArgs e)
+        {
+            var traslado = new TrasladoAeropuerto
+            {
+                Pasajeros = 2,
+                Nocturno = true
+            };
+            lstResultados.Items.Add($"Traslado: US$ {traslado.Total:N2}");
+        }
+
+        private void btnExcursion_Click(object sender, EventArgs e)
+        {
+            var excursion = new Excursion
+            {
+                Personas = 4,              // tus personas + 2
+                PrecioPorPersona = 90m     // 45 + 5 × tu último dígito
+            };
+            lstResultados.Items.Add($"Excursión: US$ {excursion.Total:N2}");
+        }
+
+        private void btnMinibar_Click(object sender, EventArgs e)
+        {
+            var minibar = new ConsumoMinibar
+            {
+                Cantidad = 11,             // tu último dígito + 2
+                PrecioUnitario = 3.50m
+            };
+            lstResultados.Items.Add($"Minibar: US$ {minibar.Total:N2}");
+        }
     }
 }
