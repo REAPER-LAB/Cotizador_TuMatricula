@@ -67,6 +67,9 @@
             btnExcursion = new Button();
             btnMinibar = new Button();
             btnCuentaTotal = new Button();
+            btnviejo = new Button();
+            btnFactura = new Button();
+            btnNivel1 = new Button();
             ((System.ComponentModel.ISupportInitialize)nudNoches).BeginInit();
             gbCotizador.SuspendLayout();
             gbTotales.SuspendLayout();
@@ -447,19 +450,52 @@
             // 
             // btnCuentaTotal
             // 
-            btnCuentaTotal.Location = new Point(960, 365);
+            btnCuentaTotal.Location = new Point(1084, 250);
             btnCuentaTotal.Name = "btnCuentaTotal";
-            btnCuentaTotal.Size = new Size(75, 23);
+            btnCuentaTotal.Size = new Size(103, 23);
             btnCuentaTotal.TabIndex = 29;
             btnCuentaTotal.Text = "CuentaTotal";
             btnCuentaTotal.UseVisualStyleBackColor = true;
             btnCuentaTotal.Click += btnCuentaTotal_Click;
+            // 
+            // btnviejo
+            // 
+            btnviejo.Location = new Point(1084, 304);
+            btnviejo.Name = "btnviejo";
+            btnviejo.Size = new Size(104, 23);
+            btnviejo.TabIndex = 30;
+            btnviejo.Text = "Probar sistema viejo";
+            btnviejo.UseVisualStyleBackColor = true;
+            btnviejo.Click += btnviejo_Click;
+            // 
+            // btnFactura
+            // 
+            btnFactura.Location = new Point(960, 365);
+            btnFactura.Name = "btnFactura";
+            btnFactura.Size = new Size(75, 23);
+            btnFactura.TabIndex = 31;
+            btnFactura.Text = "Factura";
+            btnFactura.UseVisualStyleBackColor = true;
+            btnFactura.Click += btnFactura_Click;
+            // 
+            // btnNivel1
+            // 
+            btnNivel1.Location = new Point(1084, 365);
+            btnNivel1.Name = "btnNivel1";
+            btnNivel1.Size = new Size(75, 23);
+            btnNivel1.TabIndex = 32;
+            btnNivel1.Text = "btnNivel1";
+            btnNivel1.UseVisualStyleBackColor = true;
+            btnNivel1.Click += btnNivel1_Click;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1228, 561);
+            Controls.Add(btnNivel1);
+            Controls.Add(btnFactura);
+            Controls.Add(btnviejo);
             Controls.Add(btnCuentaTotal);
             Controls.Add(btnMinibar);
             Controls.Add(btnExcursion);
@@ -540,5 +576,8 @@
         private Button btnExcursion;
         private Button btnMinibar;
         private Button btnCuentaTotal;
+        private Button btnviejo;
+        private Button btnFactura;
+        private Button btnNivel1;
     }
 }
