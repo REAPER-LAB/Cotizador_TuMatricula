@@ -245,8 +245,8 @@ namespace WinFormsApp2
         {
             var excursion = new Excursion
             {
-                Personas = 4,              // tus personas + 2
-                PrecioPorPersona = 90m     // 45 + 5 × tu último dígito
+                Personas = 4,             
+                PrecioPorPersona = 90m     
             };
             lstResultados.Items.Add($"Excursión: US$ {excursion.Total:N2}");
         }
@@ -255,7 +255,7 @@ namespace WinFormsApp2
         {
             var minibar = new ConsumoMinibar
             {
-                Cantidad = 11,             // tu último dígito + 2
+                Cantidad = 11,             
                 PrecioUnitario = 3.50m
             };
             lstResultados.Items.Add($"Minibar: US$ {minibar.Total:N2}");
@@ -314,7 +314,7 @@ namespace WinFormsApp2
             decimal totalGeneral = reserva.Total + traslado.Total + excursion.Total + minibar.Total;
             decimal totalPesos = totalGeneral * nudTasa.Value;
 
-            decimal deposito = SistemaViejo.CalcularDeposito(totalGeneral);
+            decimal deposito = SistemaViejo.CalcularDeposito(totalGen eral);
 
             lstResultados.Items.Clear();
             lstResultados.Items.Add($"Huésped: {reserva.Huesped}");
